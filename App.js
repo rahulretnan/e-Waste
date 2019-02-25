@@ -10,14 +10,14 @@ import {
   Button
 }
   from 'react-native';
-import Register from './app/components/Register';
-import Login from './app/components/Login'
-import Home from './app/components/Home'
-import Result from './app/components/Result'
+import Register from './app/components/register/Register';
+import Login from './app/components/login/Login'
+import Home from './app/components/home/Home'
+import Result from './app/components/result/Result'
 export default class App extends React.Component {
   render() {
     return (
-      <Login />
+      <Result />
 
     );
   }

@@ -14,6 +14,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { TextInput } from 'react-native-gesture-handler';
 import { Header } from 'react-native-elements'
 import { SearchBar } from 'react-native-elements';
+import styles from './Styles'
 const { width: WIDTH } = Dimensions.get('window')
 export default class Result extends Component {
     state = {
@@ -47,11 +48,4 @@ export default class Result extends Component {
       }
     }
 
-    const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
-        }
-    });
     
