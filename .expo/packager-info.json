@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19003,
+  "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 16955,
+  "packagerPid": 6246,
   "expoServerNgrokUrl": "https://td-33z.rahulagnii.e-waste.exp.direct",
   "packagerNgrokUrl": "https://packager.td-33z.rahulagnii.e-waste.exp.direct",
-  "ngrokPid": 17001
+  "ngrokPid": 6293
 }
