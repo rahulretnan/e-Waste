@@ -26,9 +26,7 @@ export default class Result extends Component {
       };
     
       render() {
-        const { search } = this.state;
-    
-        return (
+    }
             <View>
                 <Header
                     leftComponent={{ icon: 'menu', color: '#fff' }}
