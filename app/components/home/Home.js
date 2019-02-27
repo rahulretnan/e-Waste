@@ -1,56 +1,38 @@
 import React, { Component } from 'react'
 import {
-    StyleSheet,
-    Text,
-    View,
-    ImageBackground,
-    Image,
-    Dimensions,
-    TouchableOpacity,
-    Button
+    Text
 }
     from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { TextInput } from 'react-native-gesture-handler';
-import { Header } from 'react-native-elements';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Item, Input, Content, View } from 'native-base';
 import styles from './Styles'
-const { width: WIDTH } = Dimensions.get('window')
+import { colors } from 'react-native-elements';
 export default class Home extends Component {
+    static navigationOptions = {
+        drawerLabel: 'Home',
+        drawerIcon: ({ tintColor }) => (
+            <Icon name="ios-home" style={{ fontSize: 24, color: 'grey' }} />
+        )
+    }
     render() {
         return (
-
-            <View style={styles.header}>
-                <Header
-                    leftComponent={{ icon: 'menu', color: '#fff' }}
-                    containerStyle={{
-                        backgroundColor: '#48484F',
-                        justifyContent: 'space-around',
-                    }}
-                    centerComponent={{ text: 'e-Waste', style: { color: '#fff', fontSize: 20 } }}
-                />
-                <View style={styles.container}>
-
+            <Container style={styles.container}>
+                <Header style={styles.header} iosBarStyle={"light-content"}>
+                    <Left style={{ flex: 1 }}>
+                        <Icon name='menu' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
+                    </Left>
+                    <Body style={{ flex: 1 }} >
+                        <Title>e-Waste</Title>
+                    </Body>
+                </Header>
+                <View style={styles.input}>
+                    <Item rounded style={{ backgroundColor: 'rgba(232, 232, 245, 0.94)' }} >
+                        <Icon name="ios-search" style={{ fontSize: 24, color: 'grey' }} />
+                        <Input placeholder="Search" />
+                        <Icon name="ios-camera" style={{ fontSize: 29, color: 'grey' }} />
+                    </Item>
+                    <Button style={styles.btnSearch}><Text>Search</Text></Button>
                 </View>
-
-                <View style={styles.inputContainer}>
-                    <Icon name={'ios-search'} size={27}
-                        style={styles.inputIcon}
-                        color={'rgb(31, 30, 29)'} />
-                    <TextInput
-                        style={styles.input}
-                        placeholder={'Search'}
-                        placeholderTextColor={'rgba(61, 55, 52, 0.7)'}
-                        underlineColorAndroid={'transparent'} />
-                    <TouchableOpacity style={styles.btnEye}>
-                        <Icon name={'ios-camera'} color={'rgba(61, 55, 52, 0.7)'} size={20}></Icon>
-                    </TouchableOpacity>
-                </View>
-                <TouchableOpacity>
-                    <Text
-                        style={styles.btnSearch}>Search</Text>
-                </TouchableOpacity>
-            </View>
-
+            </Container>
         );
     }
 }
