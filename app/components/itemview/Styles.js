@@ -46,5 +46,10 @@ export default {
     },
     itemName:{
         fontSize:20
+    },
+    button:{
+        width:'50%',
+        alignItems:'center',
+        justifyContent:'center'
     }
 }
