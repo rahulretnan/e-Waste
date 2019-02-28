@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import styles from './Styles'
 export default class Cart extends Component {
     static navigationOptions={
         drawerLabel: 'Cart',
@@ -10,9 +11,16 @@ export default class Cart extends Component {
     }
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      <Container style={styles.container}>
+        <Header style={styles.header} iosBarStyle={"light-content"}>
+                    <Left >
+                        <Icon name='menu' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
+                    </Left>
+                    <Body style={{ flex: 1 }}>
+                        <Title>Cart</Title>
+                    </Body>
+                </Header>
+                </Container>
     )
   }
 }

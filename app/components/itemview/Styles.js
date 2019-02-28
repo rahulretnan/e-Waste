@@ -11,16 +11,6 @@ export default {
         height: 70,
         alignSelf: 'center'
     },
-    card:{
-        alignSelf:'center'
-        ,flexDirection:'row'
-        ,marginTop:4,
-        flex:1,
-        borderRadius:5,
-        backgroundColor:'rgba(0,0,0,0.1)',
-        height: HEIGHT - '50%',
-        width: WIDTH - 5
-    },
     heart:{
         fontSize:20,
         color:'grey',
@@ -31,8 +21,10 @@ export default {
 
     },
     image:{
-        width:140,
-        height:150
+        marginTop:10,
+        width: '100%',
+        height: 200,
+    
     },
     textContainer:{
         flexDirection:'column',
@@ -41,18 +33,18 @@ export default {
         marginTop:20
     },
     textAmount:{
-        alignSelf:'center',
+        marginLeft:10,
         fontWeight:'bold',
-        marginTop:8,
-        fontSize:18
+        marginTop:10,
+        fontSize:22
     },
     textDescripition:{
-
-    fontSize:10,
+        marginLeft:10,
+    fontSize:18,
     fontWeight:'bold',
     marginTop:3
     },
     itemName:{
-        fontWeight:'bold'
+        fontSize:20
     }
 }

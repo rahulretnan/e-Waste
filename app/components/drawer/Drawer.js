@@ -16,9 +16,8 @@ import Profile from '../profile/Profile';
 import WishList from '../wishlist/WishList';
 import MyProduct from '../myproduct/MyProduct';
 import MyOrder from '../myorder/MyOrder';
-import Logout from '../logout/Logout'
+import Logout from '../logout/Logout';
 import { createDrawerNavigator, DrawerItems, createAppContainer } from 'react-navigation';
-//import MyProduct from '../myproduct/MyProduct';
 export default class Drawer extends Component {
     render() {
         return (
@@ -61,6 +60,9 @@ const MyDrawerNavigator = createDrawerNavigator({
     },
     Logout: {
         screen: Logout
+    },
+    Result:{
+        screen: Result 
     }
 }, {
         contentComponent: CustomMenu,
