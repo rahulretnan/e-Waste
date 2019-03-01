@@ -1,31 +1,55 @@
 import { StyleSheet, Dimensions } from 'react-native'
-const { width: WIDTH } = Dimensions.get('window')
+const { width: WIDTH } = Dimensions.get('window');
+const { height: HEIGHT } = Dimensions.get('window')
 styles = StyleSheet.create({})
 export default {
     container: {
         flex: 1,
     },
     header: {
-        top: 23,
         width: '100%',
-        height: 60,
+        height: 70,
         alignSelf: 'center'
     },
-    input: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginLeft: 20,
-        marginRight: 20,
+    heart:{
+        fontSize:20,
+        color:'grey',
     },
-    btnSearch: {
-        top: 15,
-        alignSelf: 'center',
-        borderRadius: 45,
-        paddingTop: 10,
-        paddingBottom: 10,
-        paddingLeft: 45,
-        paddingRight: 45,
-        backgroundColor: 'rgba(115, 51, 21, 0.7)',
+    heartContainer:{
+        marginBottom:30,
+        marginEnd:5
+
+    },
+    image:{
+        
+        width: 80,
+        height: 80,
+        marginLeft:60
+    },
+    textContainer:{
+        flexDirection:'column',
+        width:'100%',
+      //  justifyContents:'center',
+        marginTop:20
+    },
+    textAmount:{
+        
+        fontWeight:'bold',
+        marginTop:20,
+        fontSize:22
+    },
+    textDescripition:{
+        marginLeft:10,
+    fontSize:18,
+    fontWeight:'bold',
+    marginTop:3
+    },
+    itemName:{
+        fontSize:20
+    },
+    button:{
+        width:'50%',
+        alignItems:'center',
+        justifyContent:'center'
     }
 }

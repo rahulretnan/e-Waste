@@ -9,7 +9,7 @@ import ItemView from '../itemview/ItemView';
 export default class AppMain extends React.Component {
   render() {
     return (
-      <ItemView />
+      <Cart />
     );
   }
 }
