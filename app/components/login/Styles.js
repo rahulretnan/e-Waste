@@ -44,7 +44,7 @@ export default {
     },
     btnrContainer: {
         width: '70%',
-        marginTop: 5,
+        marginTop: 20,
 
     },
     loginContainer: {

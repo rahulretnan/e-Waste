@@ -9,6 +9,7 @@ import { colors } from 'react-native-elements';
 export default class Home extends Component {
     static navigationOptions = {
         drawerLabel: 'Home',
+        header: null,
         drawerIcon: ({ tintColor }) => (
             <Icon name="ios-home" style={{ fontSize: 24, color: 'grey' }} />
         )
@@ -30,7 +31,7 @@ export default class Home extends Component {
                         <Input placeholder="Search" />
                         <Icon name="ios-camera" style={{ fontSize: 29, color: 'grey' }} />
                     </Item>
-                    <Button style={styles.btnSearch}><Text>Search</Text></Button>
+                    <Button style={styles.btnSearch} onPress={() => this.props.navigation.navigate('Result')}><Text>Search</Text></Button>
                 </View>
             </Container>
         );

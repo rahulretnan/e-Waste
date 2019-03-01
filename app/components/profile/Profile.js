@@ -5,6 +5,7 @@ import styles from './Styles'
 export default class Profile extends Component {
     static navigationOptions={
         drawerLabel: 'Profile',
+        header: null,
         drawerIcon: ({tintColor}) =>(
             <Icon name="person" style={{fontSize:24,color:'grey'}} />
         )

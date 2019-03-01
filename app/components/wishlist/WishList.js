@@ -6,6 +6,7 @@ import styles from './Styles'
 export default class Wishlist extends Component {
   static navigationOptions = {
     drawerLabel: 'Wishlist',
+    header:null,
     drawerIcon: ({ tintColor }) => (
       <Icon name="heart" style={{ fontSize: 24, color: 'grey' }} />
     )

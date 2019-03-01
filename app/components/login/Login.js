@@ -9,6 +9,9 @@ import {
 import { Container, Item, Input, Icon, Form, } from 'native-base';
 import styles from './Styles'
 export default class Login extends Component {
+    static navigationOptions = ({ navigation }) => ({
+        header: null
+        })
     render() {
         return (
             <Container>
@@ -43,13 +46,15 @@ export default class Login extends Component {
                     <View style={styles.btnlContainer}>
                         <View style={styles.loginContainer}>
                             <Button
+                            onPress={() => this.props.navigation.navigate('Home')}
                                 title="Sign in"
                                 color="rgba(20, 58, 198, 0.52)" />
                         </View>
                     </View>
                     <View style={styles.btnrContainer}>
                         <View style={styles.loginContainer}>
-                            <Button
+                            <Button 
+                             onPress={() => this.props.navigation.navigate('Register')}
                                 title="Reister"
                                 color="rgba(20, 58, 198, 0.52)" />
                         </View>

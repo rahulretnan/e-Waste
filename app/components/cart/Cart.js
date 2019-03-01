@@ -7,6 +7,8 @@ import { Dropdown } from 'react-native-material-dropdown';
 export default class Cart extends Component {
   static navigationOptions = {
     drawerLabel: 'Cart',
+    drawerLabel: 'Cart',
+    header: null,
     drawerIcon: ({ tintColor }) => (
       <Icon name="cart" style={{ fontSize: 24, color: 'grey' }} />
     )

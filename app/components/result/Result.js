@@ -6,6 +6,7 @@ import styles from './Styles'
 export default class Result extends Component {
   static navigationOptions = {
     drawerLabel: 'Result',
+    header:null,
     drawerIcon: ({ tintColor }) => (
       <Icon name="cart" style={{ fontSize: 24, color: 'grey' }} />
     )

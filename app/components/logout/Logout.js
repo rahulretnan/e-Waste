@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
 import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
+import Login from '../login/Login'
 export default class Logout extends Component {
     static navigationOptions={
         drawerLabel: 'Logout',
@@ -10,9 +11,7 @@ export default class Logout extends Component {
     }
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      <Login />
     )
   }
 }

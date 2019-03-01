@@ -8,7 +8,11 @@ import {
 } from 'react-native'
 import { Container, Item, Input, Icon, Form, } from 'native-base';
 import styles from './Styles'
-export default class Login extends Component {
+import { createStackNavigator, createAppContainer } from "react-navigation";
+export default class Register extends Component {
+    static navigationOptions = ({ navigation }) => ({
+        header: null
+        })
     render() {
         return (
             <Container>
@@ -67,6 +71,7 @@ export default class Login extends Component {
                     <View style={styles.btnlContainer}>
                         <View style={styles.loginContainer}>
                             <Button
+                             onPress={() => this.props.navigation.navigate('Home')}
                                 title="Register"
                                 color="rgba(20, 58, 198, 0.52)" />
                         </View>
@@ -76,4 +81,3 @@ export default class Login extends Component {
         );
     }
 }
-

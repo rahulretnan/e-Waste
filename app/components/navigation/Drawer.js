@@ -10,7 +10,6 @@ import Register from '../register/Register';
 import Login from '../login/Login';
 import Home from '../home/Home';
 import Result from '../result/Result';
-import Settings from '../settings/Settings';
 import Cart from '../cart/Cart';
 import Profile from '../profile/Profile';
 import WishList from '../wishlist/WishList';
@@ -19,6 +18,9 @@ import MyOrder from '../myorder/MyOrder';
 import Logout from '../logout/Logout';
 import { createDrawerNavigator, DrawerItems, createAppContainer } from 'react-navigation';
 export default class Drawer extends Component {
+    static navigationOptions = ({ navigation }) => ({
+        header: null
+        })
     render() {
         return (
             <MyApp />
@@ -40,9 +42,6 @@ const MyDrawerNavigator = createDrawerNavigator({
     Home: {
         screen: Home
     },
-    Profile: {
-        screen: Profile
-    },
     Cart:{
         screen:Cart
     },
@@ -55,8 +54,8 @@ const MyDrawerNavigator = createDrawerNavigator({
     MyOrder: {
         screen: MyOrder
     },
-    Settings: {
-        screen: Settings
+    Profile: {
+        screen: Profile
     },
     Logout: {
         screen: Logout
