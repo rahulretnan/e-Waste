@@ -49,20 +49,30 @@ export default class ItemView extends Component {
               <Card>
                 <CardItem cardBody >
                   <View style={{ flexDirection: 'row' }}>
-                    <View style={{ flexDirection: 'column' }}>
-                      <Text>Item Name</Text>
-                      <Text >Description</Text>
-                      <Text >₹1000</Text>
+                    <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
+                      <Text style={{fontSize:20}}>Item Name</Text>
+                      <Text style={{fontSize:16,marginTop:20}} >Description</Text>
+                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >₹1000</Text>
                     </View>
                     <Right style={{ alignSelf: 'flex-end', flex: 1, flexDirection: 'column' }}>
                       <Image source={require('../../img/image.png')} style={styles.image} />
-                      <View style={{ marginEnd: 10, width: '22%',marginBottom:85 }}>
+                      <View style={{ padding:5,marginEnd: 20, width: '22%',marginBottom:85 }}>
                         <Dropdown
                           label='Qty'
-                          data={data} />
+                          data={data} /> 
                       </View>
                     </Right>
                   </View>
+                </CardItem>
+                <CardItem style={{flexDirection:'row', padding:5}}>
+                <Button transparent style={styles.button}>
+                  <Icon name='bookmark'/>
+                  <Text>Add to Wishlist</Text>
+                </Button>
+                <Button transparent style={styles.button}>
+                <Icon name='trash'/>
+                  <Text>Remove</Text>
+                </Button>
                 </CardItem>
               </Card>
 

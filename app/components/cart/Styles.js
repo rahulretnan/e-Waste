@@ -21,15 +21,14 @@ export default {
 
     },
     image:{
-        
+        marginTop:50,
         width: 80,
         height: 80,
-        marginLeft:60
+        marginEnd:20
     },
     textContainer:{
         flexDirection:'column',
         width:'100%',
-      //  justifyContents:'center',
         marginTop:20
     },
     textAmount:{
