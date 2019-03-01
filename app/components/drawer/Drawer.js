@@ -61,9 +61,6 @@ const MyDrawerNavigator = createDrawerNavigator({
     Logout: {
         screen: Logout
     },
-    Result:{
-        screen: Result 
-    }
 }, {
         contentComponent: CustomMenu,
         contentOptions: {

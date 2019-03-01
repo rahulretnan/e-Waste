@@ -4,9 +4,9 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Card, CardIt
 import styles from './Styles'
 import { Dropdown } from 'react-native-material-dropdown';
 
-export default class ItemView extends Component {
+export default class Cart extends Component {
   static navigationOptions = {
-    drawerLabel: 'Result',
+    drawerLabel: 'Cart',
     drawerIcon: ({ tintColor }) => (
       <Icon name="cart" style={{ fontSize: 24, color: 'grey' }} />
     )
@@ -32,7 +32,7 @@ export default class ItemView extends Component {
             <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
           </Left>
           <Body>
-            <Title>search_item</Title>
+            <Title>Cart</Title>
           </Body>
           <Right>
             <View style={{ marginRight: 20 }}>
@@ -75,7 +75,108 @@ export default class ItemView extends Component {
                 </Button>
                 </CardItem>
               </Card>
+            </Content>
+          </Container>
 
+          <Container style={styles.card} >
+            <Content>
+              <Card>
+                <CardItem cardBody >
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
+                      <Text style={{fontSize:20}}>Item Name</Text>
+                      <Text style={{fontSize:16,marginTop:20}} >Description</Text>
+                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >₹1000</Text>
+                    </View>
+                    <Right style={{ alignSelf: 'flex-end', flex: 1, flexDirection: 'column' }}>
+                      <Image source={require('../../img/image.png')} style={styles.image} />
+                      <View style={{ padding:5,marginEnd: 20, width: '22%',marginBottom:85 }}>
+                        <Dropdown
+                          label='Qty'
+                          data={data} /> 
+                      </View>
+                    </Right>
+                  </View>
+                </CardItem>
+                <CardItem style={{flexDirection:'row', padding:5}}>
+                <Button transparent style={styles.button}>
+                  <Icon name='bookmark'/>
+                  <Text>Add to Wishlist</Text>
+                </Button>
+                <Button transparent style={styles.button}>
+                <Icon name='trash'/>
+                  <Text>Remove</Text>
+                </Button>
+                </CardItem>
+              </Card>
+            </Content>
+          </Container>
+
+          <Container style={styles.card} >
+            <Content>
+              <Card>
+                <CardItem cardBody >
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
+                      <Text style={{fontSize:20}}>Item Name</Text>
+                      <Text style={{fontSize:16,marginTop:20}} >Description</Text>
+                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >₹1000</Text>
+                    </View>
+                    <Right style={{ alignSelf: 'flex-end', flex: 1, flexDirection: 'column' }}>
+                      <Image source={require('../../img/image.png')} style={styles.image} />
+                      <View style={{ padding:5,marginEnd: 20, width: '22%',marginBottom:85 }}>
+                        <Dropdown
+                          label='Qty'
+                          data={data} /> 
+                      </View>
+                    </Right>
+                  </View>
+                </CardItem>
+                <CardItem style={{flexDirection:'row', padding:5}}>
+                <Button transparent style={styles.button}>
+                  <Icon name='bookmark'/>
+                  <Text>Add to Wishlist</Text>
+                </Button>
+                <Button transparent style={styles.button}>
+                <Icon name='trash'/>
+                  <Text>Remove</Text>
+                </Button>
+                </CardItem>
+              </Card>
+            </Content>
+          </Container>
+
+          <Container style={styles.card} >
+            <Content>
+              <Card>
+                <CardItem cardBody >
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
+                      <Text style={{fontSize:20}}>Item Name</Text>
+                      <Text style={{fontSize:16,marginTop:20}} >Description</Text>
+                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >₹1000</Text>
+                    </View>
+                    <Right style={{ alignSelf: 'flex-end', flex: 1, flexDirection: 'column' }}>
+                      <Image source={require('../../img/image.png')} style={styles.image} />
+                      <View style={{ padding:5,marginEnd: 20, width: '22%',marginBottom:85 }}>
+                        <Dropdown
+                          label='Qty'
+                          data={data} /> 
+                      </View>
+                    </Right>
+                  </View>
+                </CardItem>
+                <CardItem style={{flexDirection:'row', padding:5}}>
+                <Button transparent style={styles.button}>
+                  <Icon name='bookmark'/>
+                  <Text>Add to Wishlist</Text>
+                </Button>
+                <Button transparent style={styles.button}>
+                <Icon name='trash'/>
+                  <Text>Remove</Text>
+                </Button>
+                </CardItem>
+              </Card>
             </Content>
           </Container>
         </ScrollView>

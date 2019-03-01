@@ -18,7 +18,7 @@ export default class ItemView extends Component {
                         <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
                     </Left>
                     <Body>
-                        <Title>search_item</Title>
+                        <Title></Title>
                     </Body>
                     <Right>
                         <View style={{ marginRight: 20 }}>

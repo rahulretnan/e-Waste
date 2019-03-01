@@ -4,8 +4,8 @@ const { height: HEIGHT } = Dimensions.get('window')
 styles = StyleSheet.create({})
 export default {
     card: {
-        flex: 1,
-        height: HEIGHT - '50%',
+       flex:1,
+       height: HEIGHT - '50%',
        width: WIDTH - 5
     },
     header: {
