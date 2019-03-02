@@ -13,7 +13,7 @@ export default class Result extends Component {
       <Container >
         <Header style={styles.header} iosBarStyle={"light-content"}>
           <Left >
-            <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => goBack()} style={{ color: 'white' }} />
+            <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.navigate('HomeS')} style={{ color: 'white' }} />
           </Left>
           <Body>
             <Title>search_item</Title>
