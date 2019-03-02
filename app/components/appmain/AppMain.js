@@ -13,13 +13,33 @@ import Register from '../register/Register';
 import Home from '../home/Home';
 import Delivery from '../delivery/Delivery'
 import Payment from '../payment/Payment'
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+
+const client = new ApolloClient({
+  uri: "http://192.168.0.7:8000/graphql",
+  request: Operation => {
+    // const token = localStorage.getItem("token");
+
+    // Operation.setContext({
+    //   headers: {
+    //     Authorization: token ? `JWT ${token}` : ""
+    //   }
+    // });
+    return Operation;
+  }
+});
+
 export default class AppMain extends React.Component {
   render() {
     return (
+      <ApolloProvider client={client}>
+
+        
+              <Drawer />
+           
       
-        
-      <Drawer />
-        
+      </ApolloProvider>
          
     );
   }

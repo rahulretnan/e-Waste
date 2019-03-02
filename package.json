@@ -7,10 +7,14 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "apollo-boost": "^0.3.1",
     "expo": "^32.0.0",
     "formik": "^1.5.1",
+    "graphql": "^14.1.1",
+    "graphql-tag": "^2.10.1",
     "native-base": "^2.12.0",
     "react": "16.5.0",
+    "react-apollo": "^2.5.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-elements": "^1.0.0",
     "react-native-gesture-handler": "^1.0.16",
