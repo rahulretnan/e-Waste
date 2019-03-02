@@ -6,6 +6,7 @@ import {
 import { Container, Header, Left, Body, Right, Button, Icon, Title, Item, Input, Content, View } from 'native-base';
 import styles from './Styles'
 import { colors } from 'react-native-elements';
+import Drawer from '../navigation/Drawer'
 export default class Home extends Component {
     static navigationOptions = {
         drawerLabel: 'Home',

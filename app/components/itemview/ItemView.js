@@ -12,11 +12,12 @@ export default class ItemView extends Component {
         )
     }
     render() {
+        const { goBack } = this.props.navigation;
         return (
             <Container >
                 <Header style={styles.header} iosBarStyle={"light-content"}>
                     <Left >
-                        <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
+                        <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => goBack()} style={{ color: 'white' }} />
                     </Left>
                     <Body>
                         <Title></Title>
@@ -37,7 +38,9 @@ export default class ItemView extends Component {
                     <Card>
             <CardItem cardBody>
               <ImageBackground source={require('../../img/image.png')} style={styles.image}>
-              <Button transparent rounded style={{alignSelf:'flex-end',marginTop:10}}>
+              <Button 
+              onPress={() => this.props.navigation.navigate('Wishlist')}
+              transparent rounded style={{alignSelf:'flex-end',marginTop:10}}>
                   <Icon name='heart' style={{ fontSize:20,color: 'grey'}}/>
               </Button>
               </ImageBackground>
@@ -55,7 +58,9 @@ export default class ItemView extends Component {
                     <Button style={{width:'50%',alignItems:'center',justifyContent:'center',backgroundColor:'orange',height:60}}>
                         <Text style={{fontSize:18,color:'white'}}>Add to cart</Text>
                     </Button>
-                    <Button style={{width:'50%',alignItems:'center',justifyContent:'center',height:60}}>
+                    <Button
+                    onPress={() => this.props.navigation.navigate('Payment')}
+                    style={{width:'50%',alignItems:'center',justifyContent:'center',height:60}}>
                         <Text style={{fontSize:18,color:'white'}}>Buy Now</Text>
                     </Button>
                 </View>

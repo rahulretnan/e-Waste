@@ -4,19 +4,16 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Card, CardIt
 import styles from './Styles'
 
 export default class Result extends Component {
-  static navigationOptions = {
-    drawerLabel: 'Result',
-    header:null,
-    drawerIcon: ({ tintColor }) => (
-      <Icon name="cart" style={{ fontSize: 24, color: 'grey' }} />
-    )
-  }
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+    })
   render() {
+    const { goBack } = this.props.navigation;
     return (
       <Container >
         <Header style={styles.header} iosBarStyle={"light-content"}>
           <Left >
-            <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
+            <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => goBack()} style={{ color: 'white' }} />
           </Left>
           <Body>
             <Title>search_item</Title>
@@ -34,12 +31,12 @@ export default class Result extends Component {
         <ScrollView>
           <Container style={styles.card} >
             <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
                 <Image source={require('../../img/image.png')} style={styles.image} />
               </TouchableOpacity>
             </Content>
             <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
+              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
                 <Content contentContainerStyle={styles.textContainer}>
                   <Text style={styles.itemName}>Name of the item</Text>
                   <Text style={styles.textDescripition}>description</Text>

@@ -8,11 +8,12 @@ export default class Delivery extends Component {
         header: null
     })
     render() {
+        const { goBack } = this.props.navigation;
         return (
             <Container >
                 <Header style={styles.header} iosBarStyle={"light-content"}>
                     <Left >
-                        <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
+                        <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.navigate('ItemView')} style={{ color: 'white' }} />
                     </Left>
                     <Body>
                         <Title>Payments</Title>

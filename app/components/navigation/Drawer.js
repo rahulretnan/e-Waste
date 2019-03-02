@@ -16,14 +16,16 @@ import WishList from '../wishlist/WishList';
 import MyProduct from '../myproduct/MyProduct';
 import MyOrder from '../myorder/MyOrder';
 import Logout from '../logout/Logout';
-import { createDrawerNavigator, DrawerItems, createAppContainer } from 'react-navigation';
+import ItemView from '../itemview/ItemView'
+import Payment from '../payment/Payment'
+import { createDrawerNavigator, DrawerItems,createSwitchNavigator, createAppContainer } from 'react-navigation';
 export default class Drawer extends Component {
     static navigationOptions = ({ navigation }) => ({
         header: null
         })
     render() {
         return (
-            <MyApp />
+            <Myscreen />
         )
     }
 }
@@ -68,4 +70,44 @@ const MyDrawerNavigator = createDrawerNavigator({
             }
           }
     })
-const MyApp = createAppContainer(MyDrawerNavigator);
+
+const AppNavigator = createSwitchNavigator({
+    Login: {
+      screen: Login
+    },
+    Register:{
+        screen: Register
+    },
+    Home:{
+        screen:MyDrawerNavigator
+    },
+    Cart:{
+        screen: Cart
+    },
+    ItemView:{
+        screen:ItemView
+    },
+    MyOrder:{
+        screen:MyOrder
+    },
+    MyProduct:{
+        screen:MyProduct
+    },
+    Profile:{
+        screen:Profile
+    },
+    Payment:{
+        screen:Payment
+    },
+    WishList:{
+        screen:WishList
+    },
+    Drawer:{
+        screen:Drawer
+    },
+    Result:{
+        screen: Result
+    }
+  });
+  
+const Myscreen = createAppContainer(AppNavigator);
