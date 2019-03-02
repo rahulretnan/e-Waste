@@ -12,12 +12,14 @@ import Screen from '../navigation/Screen'
 import { View } from 'native-base';
 import Register from '../register/Register';
 import Home from '../home/Home';
+import Delivery from '../delivery/Delivery'
+import Payment from '../payment/Payment'
 export default class AppMain extends React.Component {
   render() {
     return (
       
-      
-      <Screen />
+        
+      <Payment />
         
          
     );

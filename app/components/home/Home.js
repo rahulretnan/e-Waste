@@ -31,7 +31,7 @@ export default class Home extends Component {
                         <Input placeholder="Search" />
                         <Icon name="ios-camera" style={{ fontSize: 29, color: 'grey' }} />
                     </Item>
-                    <Button style={styles.btnSearch} onPress={() => this.props.navigation.navigate('Result')}><Text>Search</Text></Button>
+                    <Button style={styles.btnSearch} onPress={() => this.props.navigation.navigate('Result')}><Text style={{color:'white'}}>Search</Text></Button>
                 </View>
             </Container>
         );
