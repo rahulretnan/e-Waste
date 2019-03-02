@@ -16,7 +16,7 @@ export default class Register extends Component {
     render() {
         return (
             <Container>
-                <ImageBackground
+                <ImageBackground    
                     source={require('../../img/bg.jpg')}
                     style={styles.container}>
                     <View style={styles.logoContainer}>

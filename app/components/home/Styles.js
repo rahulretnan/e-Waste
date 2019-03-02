@@ -26,6 +26,6 @@ export default {
         paddingBottom: 10,
         paddingLeft: 45,
         paddingRight: 45,
-        backgroundColor: 'rgba(115, 51, 21, 0.7)',
+        backgroundColor: 'rgba(0,0,255,0.8)',
     }
 }
