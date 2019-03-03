@@ -6,9 +6,9 @@ export default {
         flex: 1,
     },
     header: {
-        top: 23,
         width: '100%',
-        height: 60,
+        height: 80,
+        paddingTop:20,
         alignSelf: 'center'
     },
     input: {

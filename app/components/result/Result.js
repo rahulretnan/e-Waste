@@ -4,13 +4,26 @@ import { Container, Header, Left, Body, Right, Button, Icon, Title, Card, CardIt
 import styles from './Styles'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-
 class Components extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: null
-    })
+
+  constructor(props) {
+
+    super(props)
+    this.state = {
+      deviceList: [
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+        { name: "Redmi Note Pro", price: "100", short_desc: "phone" },
+
+      ]
+    }
+  }
+
   render() {
-    // const { goBack } = this.props.navigation;
+
     return (
       <Container >
         <Header style={styles.header} iosBarStyle={"light-content"}>
@@ -18,7 +31,7 @@ class Components extends Component {
             <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.navigate('Home')} style={{ color: 'white' }} />
           </Left> */}
           <Body>
-            <Title>search_item</Title>
+            <Title>Search Results</Title>
           </Body>
           <Right>
             <View style={{ marginRight: 20 }}>
@@ -31,26 +44,30 @@ class Components extends Component {
           </Right>
         </Header>
         <ScrollView>
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
+          {
+            this.state.deviceList.map((single_data, key) => (
+              <Container key={key} style={styles.card} >
+                <Content>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
+                    <Image source={require('../../img/image.png')} style={styles.image} />
+                  </TouchableOpacity>
                 </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
+                <Content contentContainerStyle={{ flexDirection: 'row' }}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
+                    <Content contentContainerStyle={styles.textContainer}>
+                      <Text style={styles.itemName}>{single_data.name}</Text>
+                      <Text style={styles.textDescripition}>{single_data.short_desc}</Text>
+                      <Text style={styles.textAmount}> {single_data.price}</Text>
+                    </Content>
+                  </TouchableOpacity>
+                  <Right style={styles.heartContainer}>
+                    <Icon name="heart" style={styles.heart} />
+                  </Right>
+                </Content>
+              </Container>
+            ))
+          }
+
 
         </ScrollView>
       </Container>
@@ -58,15 +75,23 @@ class Components extends Component {
   }
 }
 
-
-
-
-
 class Devices extends Component {
-  static navigationOptions = ({ navigation }) => ({
-    header: null
-    })
-    
+  constructor(props) {
+    super(props)
+    this.state = {
+      deviceList: [
+        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "100", short_desc: "phone" },
+
+      ]
+    }
+  }
+
+
   render() {
     // const { goBack } = this.props.navigation;
     return (
@@ -76,7 +101,7 @@ class Devices extends Component {
             <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.navigate('Home')} style={{ color: 'white' }} />
           </Left> */}
           <Body>
-            <Title>search_item</Title>
+            <Title>Search Results</Title>
           </Body>
           <Right>
             <View style={{ marginRight: 20 }}>
@@ -89,137 +114,30 @@ class Devices extends Component {
           </Right>
         </Header>
         <ScrollView>
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
+          {
+            this.state.deviceList.map((single_data, key) => (
+              <Container key={key} style={styles.card} >
+                <Content>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
+                    <Image source={require('../../img/image.png')} style={styles.image} />
+                  </TouchableOpacity>
                 </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
-
-
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
+                <Content contentContainerStyle={{ flexDirection: 'row' }}>
+                  <TouchableOpacity onPress={() => this.props.navigation.navigate('ItemView')}>
+                    <Content contentContainerStyle={styles.textContainer}>
+                      <Text style={styles.itemName}>{single_data.name}</Text>
+                      <Text style={styles.textDescripition}>{single_data.short_desc}</Text>
+                      <Text style={styles.textAmount}> {single_data.price}</Text>
+                    </Content>
+                  </TouchableOpacity>
+                  <Right style={styles.heartContainer}>
+                    <Icon name="heart" style={styles.heart} />
+                  </Right>
                 </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
+              </Container>
+            ))
+          }
 
-
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
-                </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
-
-
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
-                </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
-
-
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
-                </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
-
-
-
-          <Container style={styles.card} >
-            <Content>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Image source={require('../../img/image.png')} style={styles.image} />
-              </TouchableOpacity>
-            </Content>
-            <Content contentContainerStyle={{ flexDirection: 'row' }}>
-              <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
-                <Content contentContainerStyle={styles.textContainer}>
-                  <Text style={styles.itemName}>Name of the item</Text>
-                  <Text style={styles.textDescripition}>description</Text>
-                  <Text style={styles.textAmount}> ‎₹100</Text>
-                </Content>
-              </TouchableOpacity>
-              <Right style={styles.heartContainer}>
-                <Icon name="heart" style={styles.heart} />
-              </Right>
-            </Content>
-          </Container>
-          <Item />
         </ScrollView>
       </Container>
     )
@@ -229,19 +147,35 @@ class Devices extends Component {
 
 const TabNavigator = createBottomTabNavigator({
   Components: Components,
-  
+
   Devices: Devices,
-},{tabBarOptions: {
-  activeTintColor: 'white',
-  labelStyle: {
-    fontSize: 16,
-  },
-  style: {
-    backgroundColor: '#5252EA',
-    alignSelf:'center',
-  },
+}, {
+  tabBarOptions: {
+    activeTintColor: 'white',
+    labelStyle: {
+      fontSize: 16,
+    },
+    style: {
+      backgroundColor: '#5252EA',
+      alignSelf: 'center',
+    },
 
 
-}});
 
-export default createAppContainer(TabNavigator);
+
+  }
+  });
+
+const AppContainer = createAppContainer(TabNavigator);
+
+
+export default class Result extends Component {
+  static navigationOptions = ({ navigation }) => ({
+    header: null
+  })
+  render() {
+    return (
+      <AppContainer />
+    )
+  }
+}

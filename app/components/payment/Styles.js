@@ -11,7 +11,8 @@ export default {
     },
     header: {
         width: '100%',
-        height: 70,
+        height: 80,
+        paddingTop:20,
         alignSelf: 'center'
     },
     heart:{

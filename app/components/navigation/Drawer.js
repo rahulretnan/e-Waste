@@ -9,7 +9,6 @@ from 'react-native';
 import Register from '../register/Register';
 import Login from '../login/Login';
 import Home from '../home/Home';
-import Result from '../result/Result';
 import Cart from '../cart/Cart';
 import Profile from '../profile/Profile';
 import WishList from '../wishlist/WishList';
@@ -19,6 +18,7 @@ import Logout from '../logout/Logout';
 import ItemView from '../itemview/ItemView'
 import Payment from '../payment/Payment'
 import { createDrawerNavigator, DrawerItems,createSwitchNavigator, createAppContainer,createStackNavigator } from 'react-navigation';
+import Result from '../result/Result';
 export default class Drawer extends Component {
     static navigationOptions = ({ navigation }) => ({
         header: null
@@ -70,8 +70,7 @@ const MyDrawerNavigator = createDrawerNavigator({
             }
           },
           navigationOptions:  {
-        
-            header: null,
+         header: null,
           
     }
     })
@@ -116,11 +115,12 @@ const AppNavigator = createStackNavigator({
     contentComponent: CustomMenu,
     contentOptions: {
         labelStyle: {
-          color: 'grey',
+          color: 'grey'
         }
       },
-      navigationOptions:{
-          intialRoute: Login
+      defaultnavigationOptions:{
+          intialRoute: Login,
+          header: null,
       }
   }
   );
