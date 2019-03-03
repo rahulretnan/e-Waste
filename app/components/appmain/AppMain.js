@@ -27,12 +27,16 @@ import { store, persistor } from "./../../redux/store";
 const client = new ApolloClient({
   uri: "http://192.168.0.7:8000/graphql",
   request: Operation => {
+<<<<<<< HEAD
     const temp =
       "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im5pbWlzaGEiLCJleHAiOjE1NTE1OTE5NTQsIm9yaWdJYXQiOjE1NTE1OTE2NTR9.u-a4Z5XMvabPLU_CUSEE2c7EvOwE0nZOSe11CSjJTSw";
     const token = store.getState().auth.token
       ? store.getState().auth.token
       : temp;
 
+=======
+    const token = store.getState().auth.token;
+>>>>>>> 9dbb4a757ba1b2c025111c46665d3ec1b32d4092
     Operation.setContext({
       headers: {
         Authorization: token ? `JWT ${token}` : ""

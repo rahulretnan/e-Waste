@@ -32,7 +32,7 @@ export default class Cart extends Component {
       <Container >
         <Header style={styles.header} iosBarStyle={"light-content"}>
           <Left >
-            <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => goBack()} style={{ color: 'white' }} />
+            <Icon style={{ width: 20 }} name='menu' onPress={() => this.props.navigation.openDrawer()} style={{ color: 'white' }} />
           </Left>
           <Body>
             <Title>Cart</Title>

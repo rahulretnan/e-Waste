@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import { Text, View, Image, ScrollView } from "react-native";
 import {
@@ -20,6 +21,14 @@ import styles from "./Styles";
 import { Query, Mutation } from "react-apollo";
 import gql from "graphql-tag";
 import { Formik } from "formik";
+=======
+import React, { Component } from 'react'
+import { Text, View,Image,ScrollView } from 'react-native'
+import { Container, Header, Left, Body, Right, Button, Label,Input, Icon, Title, Content,Item, Form,Textarea } from 'native-base';
+import styles from './Styles'
+
+
+>>>>>>> 9dbb4a757ba1b2c025111c46665d3ec1b32d4092
 
 export default class Profile extends Component {
   constructor(props) {
