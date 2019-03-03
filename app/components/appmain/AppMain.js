@@ -27,7 +27,11 @@ import { store, persistor } from "./../../redux/store";
 const client = new ApolloClient({
   uri: "http://192.168.0.7:8000/graphql",
   request: Operation => {
-    const token = store.getState().auth.token;
+    const temp =
+      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im5pbWlzaGEiLCJleHAiOjE1NTE1OTE5NTQsIm9yaWdJYXQiOjE1NTE1OTE2NTR9.u-a4Z5XMvabPLU_CUSEE2c7EvOwE0nZOSe11CSjJTSw";
+    const token = store.getState().auth.token
+      ? store.getState().auth.token
+      : temp;
 
     Operation.setContext({
       headers: {
@@ -44,7 +48,8 @@ export default class AppMain extends React.Component {
       <ApolloProvider client={client}>
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
-            <Drawer />
+            {/* <Drawer /> */}
+            <Profile />
           </PersistGate>
         </Provider>
       </ApolloProvider>

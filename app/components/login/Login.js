@@ -51,12 +51,7 @@ class Login extends Component {
                     values,
                     handleSubmit,
                     handleChange,
-                    handleBlur,
-                    errors,
-                    touched,
-                    setFieldTouched,
-                    isValid,
-                    isSubmitting
+                    handleBlur
                   }) => (
                     <React.Fragment>
                       <Item rounded style={styles.input}>
