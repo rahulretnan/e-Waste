@@ -80,12 +80,12 @@ class Devices extends Component {
     super(props)
     this.state = {
       deviceList: [
-        { name: "Readmi", price: "100", short_desc: "phone" },
-        { name: "Readmi", price: "100", short_desc: "phone" },
-        { name: "Readmi", price: "100", short_desc: "phone" },
-        { name: "Readmi", price: "100", short_desc: "phone" },
-        { name: "Readmi", price: "100", short_desc: "phone" },
-        { name: "Readmi", price: "100", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" },
 
       ]
     }

@@ -7,6 +7,7 @@ export default {
         flex: 1,
         height: HEIGHT - '50%',
        width: WIDTH - 5
+       
     },
     header: {
         width: '100%',

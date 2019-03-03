@@ -11,8 +11,22 @@ export default class ItemView extends Component {
             <Icon name="cart" style={{ fontSize: 24, color: 'grey' }} />
         )
     }
+    constructor(props) {
+
+        super(props)
+        this.state = {
+          deviceList: [
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+            { name: "Readmi", price: "₹1000", short_desc: "phone" },
+          ]
+        }
+      }
     render() {
-        const { goBack } = this.props.navigation;
+       
         return (
             <Container >
                 <Header style={styles.header} iosBarStyle={"light-content"}>
@@ -33,7 +47,8 @@ export default class ItemView extends Component {
                     </Right>
                 </Header>
                 <ScrollView>
-                    <Container style={styles.card} >
+                {this.state.deviceList.map((single_data, key) => (
+              <Container key={key} style={styles.card} >
                     <Content>
                     <Card>
             <CardItem cardBody>
@@ -46,13 +61,14 @@ export default class ItemView extends Component {
               </ImageBackground>
             </CardItem>
             <CardItem>
-                <Text style={styles.itemName}>Item Name</Text>
+                <Text style={styles.itemName}>{single_data.name}</Text>
             </CardItem>
           </Card>
-          <Text style={styles.textDescripition}>Description</Text>
-          <Text style={styles.textAmount}>₹1000</Text>
+          <Text style={styles.textDescripition}>{single_data.short_desc}</Text>
+          <Text style={styles.textAmount}>{single_data.price}</Text>
         </Content>
                     </Container>
+                     ))}
                 </ScrollView>
                 <View style={{flexDirection:'row',alignSelf:'center'}}>
                     <Button style={{width:'50%',alignItems:'center',justifyContent:'center',backgroundColor:'orange',height:60}}>
@@ -65,6 +81,7 @@ export default class ItemView extends Component {
                     </Button>
                 </View>
             </Container>
+               
         )
     }
 }

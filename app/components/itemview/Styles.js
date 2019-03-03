@@ -4,7 +4,9 @@ const { height: HEIGHT } = Dimensions.get('window')
 styles = StyleSheet.create({})
 export default {
     container: {
-        flex: 1,
+        flex:1,
+        height: HEIGHT - '80%',
+       width: WIDTH - 5
     },
     header: {
         width: '100%',

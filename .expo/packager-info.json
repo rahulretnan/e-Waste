@@ -1,9 +1,9 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 2136,
-  "expoServerNgrokUrl": "https://gg-hkc.anonymous.e-waste.exp.direct",
-  "packagerNgrokUrl": "https://packager.gg-hkc.anonymous.e-waste.exp.direct",
-  "ngrokPid": 28876
+  "packagerPort": 19004,
+  "packagerPid": 25509,
+  "expoServerNgrokUrl": "https://id-txr.rahulagnii.e-waste.exp.direct",
+  "packagerNgrokUrl": "https://packager.id-txr.rahulagnii.e-waste.exp.direct",
+  "ngrokPid": 25557
 }

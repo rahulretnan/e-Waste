@@ -23,6 +23,7 @@ import { connect } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { ApolloProvider } from "react-apollo";
 import { store, persistor } from "./../../redux/store";
+import MyOrder from "../myorder/MyOrder";
 
 const client = new ApolloClient({
   uri: "http://192.168.0.7:8000/graphql",
@@ -49,7 +50,7 @@ export default class AppMain extends React.Component {
         <Provider store={store}>
           <PersistGate loading={null} persistor={persistor}>
             {/* <Drawer /> */}
-            <Profile />
+            <Wishlist />
           </PersistGate>
         </Provider>
       </ApolloProvider>
