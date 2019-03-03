@@ -9,12 +9,37 @@ import {
 import { Container, Item, Input, Icon, Form, } from 'native-base';
 import styles from './Styles'
 import { Formik } from 'formik'
+import gql from "graphql-tag";
+import { Mutation } from "react-apollo";
+import { connect } from "react-redux";
+import { setAuth } from "./../../redux/actions/auth-actions";
+
+
+const SIGNUP = gql`
+  mutation Signup($firstname: String!, $lastname: String!,  $username: String!, $email: String!, $phoneNumber: String!, $password: String!) {
+    createCustomuser(firstname: $firstname, lastname: $lastname, username: $username, email: $email, phoneNumber: $phoneNumber, password: $password) {
+      customuser {
+        username
+      }
+    }
+  }
+`;
+
+
 export default class Register extends Component {
     static navigationOptions = ({ navigation }) => ({
         header: null
     })
     render() {
         return (
+            <Mutation
+            onCompleted={() => {
+              this.setState({ form: "register" });
+              this.props.navigation.navigate("Login");
+            }}
+            mutation={SIGNUP}
+          >
+            {(SignUp, { data }) => (
             <Container>
                 <ImageBackground    
                     source={require('../../img/bg.jpg')}
@@ -25,8 +50,8 @@ export default class Register extends Component {
                         <Text style={styles.text}>Get Your Components Here!</Text>
                     </View>
                     <Formik
-                        initialValues={{ firstname: '', lastname: '', email: '', mobile: '', password: '', confirmpassword: '' }}
-                        onSubmit={(values) => console.log(values)}
+                        initialValues={{ firstname: '', lastname: '',username: '', email: '', phoneNumber: '', password: ''}}
+                        onSubmit={values => SignUp({ variables: values })}
                         render={({
                             values,
                             handleSubmit,
@@ -56,7 +81,18 @@ export default class Register extends Component {
                                         <Input placeholder='Last Name'
                                             onChangeText={handleChange('lastname')}
                                             onBlur={handleBlur('lastname')}
-                                            value={values.firstname}
+                                            value={values.lastname}
+                                            style={{ color: "white" }}
+                                            placeholderTextColor={'rgba(225, 225, 255, 0.7)'}
+                                        />
+                                    </Item>
+                                    <Item rounded style={styles.input}>
+                                        <Icon name={'ios-person'}
+                                            style={styles.inputIcon} />
+                                        <Input placeholder='Username'
+                                            onChangeText={handleChange('username')}
+                                            onBlur={handleBlur('username')}
+                                            value={values.username}
                                             style={{ color: "white" }}
                                             placeholderTextColor={'rgba(225, 225, 255, 0.7)'}
                                         />
@@ -76,9 +112,9 @@ export default class Register extends Component {
                                         <Icon name={'ios-call'}
                                             style={styles.inputIcon} />
                                         <Input placeholder='Mobile No.'
-                                            onChangeText={handleChange('mobile')}
-                                            onBlur={handleBlur('mobile')}
-                                            value={values.mobile}
+                                            onChangeText={handleChange('phoneNumber')}
+                                            onBlur={handleBlur('phoneNumber')}
+                                            value={values.phoneNumber}
                                             style={{ color: "white" }}
                                             placeholderTextColor={'rgba(225, 225, 255, 0.7)'}
                                         />
@@ -109,6 +145,8 @@ export default class Register extends Component {
                     />
                 </ImageBackground>
             </Container>
+            )}
+            </Mutation>
         );
     }
 }

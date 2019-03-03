@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Text, View,Image,ScrollView } from 'react-native'
 import { Container, Header, Left, Body, Right, Button, Label,Input, Icon, Title, Content,Item, Form,Textarea } from 'native-base';
 import styles from './Styles'
+
+
+
 export default class Profile extends Component {
     static navigationOptions={
         drawerLabel: 'Profile',

@@ -26,7 +26,6 @@ class Login extends Component {
         onCompleted={data => {
           this.props.setAuth(data.tokenAuth.token);
           this.props.navigation.navigate("Home");
-          // localStorage.setItem("token", data.tokenAuth.token)
         }}
         mutation={Sign_In}
       >
@@ -87,7 +86,9 @@ class Login extends Component {
                       <View style={styles.btnlContainer}>
                         <View style={styles.loginContainer}>
                           <Button
-                            onPress={handleSubmit}
+                            onPress=
+                            // {() =>this.props.navigation.navigate("Home")}
+                            {handleSubmit}
                             title="Sign in"
                             color="rgba(20, 58, 198, 0.52)"
                           />

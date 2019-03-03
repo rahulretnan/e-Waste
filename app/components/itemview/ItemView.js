@@ -16,9 +16,9 @@ export default class ItemView extends Component {
         return (
             <Container >
                 <Header style={styles.header} iosBarStyle={"light-content"}>
-                    <Left >
+                    {/* <Left >
                         <Icon style={{ width: 20 }} name='arrow-round-back' onPress={() => this.props.navigation.navigate('Result')} style={{ color: 'white' }} />
-                    </Left>
+                    </Left> */}
                     <Body>
                         <Title></Title>
                     </Body>

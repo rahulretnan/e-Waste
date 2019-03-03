@@ -28,7 +28,6 @@ const client = new ApolloClient({
   uri: "http://192.168.0.7:8000/graphql",
   request: Operation => {
     const token = store.getState().auth.token;
-
     Operation.setContext({
       headers: {
         Authorization: token ? `JWT ${token}` : ""
