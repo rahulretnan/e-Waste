@@ -18,12 +18,12 @@ export default class Cart extends Component {
     super(props)
     this.state = {
       deviceList: [
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone" ,model_name:"s63q4" },
       ]
     }
   }
@@ -68,6 +68,7 @@ export default class Cart extends Component {
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
                       <Text style={{fontSize:20}}>{single_data.name}</Text>
+                      <Text style={{fontSize:20,marginTop:20}} >Model : {single_data.model_name}</Text>
                       <Text style={{fontSize:16,marginTop:20}} >{single_data.short_desc}</Text>
                       <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >{single_data.price}</Text>
                     </View>

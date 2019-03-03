@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Card, CardItem, Content, Item, Thumbnail, Label } from 'native-base';
+import { Container, Header, Left, Body, Right, Button, Icon, Title, Card, CardItem, Content, Item, Thumbnail, Label,Fab,Footer } from 'native-base';
 import styles from './Styles'
 import { Dropdown } from 'react-native-material-dropdown';
 
@@ -23,7 +23,9 @@ export default class MyOrder extends Component {
         { name: "Readmi", price: "₹1000", short_desc: "phone" },
         { name: "Readmi", price: "₹1000", short_desc: "phone" },
         { name: "Readmi", price: "₹1000", short_desc: "phone" },
-      ]
+      ],
+            active: 'true'
+        
     }
   }
   render() {
@@ -61,6 +63,16 @@ export default class MyOrder extends Component {
             </View>
           </Right>
         </Header>
+        <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',alignSelf:'center'}}>
+                    {/* <Button style={{width:'40%',alignItems:'center',justifyContent:'center',backgroundColor:'orange',height:40,borderRadius:30,marginRight:5}}>
+                        <Text style={{fontSize:16,color:'white'}}>Add Device</Text>
+                    </Button> */}
+                    <Button
+                    onPress={() => this.props.navigation.navigate('AddProduct')}
+                    style={{width:'40%',alignItems:'center',justifyContent:'center',height:40,backgroundColor:'green',borderRadius:30}}>
+                        <Text style={{fontSize:16,color:'white'}}>Add Component</Text>
+                    </Button>
+                </View>
         <ScrollView>
           {this.state.deviceList.map((single_data, key) => (
             <Container key={key} style={styles.card} >

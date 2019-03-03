@@ -26,7 +26,7 @@ export default class Profile extends Component {
     super(props);
     this.state = {
       isEdidting: false
-    };
+    }
   }
   static navigationOptions = {
     drawerLabel: "Profile",
@@ -135,6 +135,7 @@ export default class Profile extends Component {
                                 <Label>First Name :</Label>
                                 <Item stackedLabel>
                                   <Input
+                                  disabled={!this.state.isEdidting}
                                     onChangeText={handleChange("firstName")}
                                     onBlur={handleBlur("firstName")}
                                     value={values.firstName}
@@ -144,6 +145,7 @@ export default class Profile extends Component {
                                 <Label>Last Name :</Label>
                                 <Item stackedLabel>
                                   <Input
+                                  disabled={!this.state.isEdidting}
                                     onChangeText={handleChange("lastName")}
                                     onBlur={handleBlur("lastName")}
                                     value={values.lastName}
@@ -153,6 +155,7 @@ export default class Profile extends Component {
                                 <Label>Email :</Label>
                                 <Item stackedLabel>
                                   <Input
+                                  disabled={!this.state.isEdidting}
                                     onChangeText={handleChange("email")}
                                     onBlur={handleBlur("email")}
                                     value={values.email}
@@ -162,6 +165,7 @@ export default class Profile extends Component {
                                 <Label>Username :</Label>
                                 <Item stackedLabel>
                                   <Input
+                                  disabled={!this.state.isEdidting}
                                     onChangeText={handleChange("username")}
                                     onBlur={handleBlur("username")}
                                     value={values.username}
@@ -171,6 +175,7 @@ export default class Profile extends Component {
                                 <Label>Mobile :</Label>
                                 <Item stackedLabel>
                                   <Input
+                                  disabled={!this.state.isEdidting}
                                     onChangeText={handleChange("phoneNumber")}
                                     onBlur={handleBlur("phoneNumber")}
                                     value={values.phoneNumber}
@@ -208,7 +213,7 @@ export default class Profile extends Component {
 
                                   <Button
                                     onPress={() => {
-                                      this.setState({ isEdidting: true });
+                                      this.setState({ isEdidting: true});
                                     }}
                                     disabled={this.state.isEdidting}
                                     rounded

@@ -19,6 +19,7 @@ import ItemView from '../itemview/ItemView'
 import Payment from '../payment/Payment'
 import { createDrawerNavigator, DrawerItems,createSwitchNavigator, createAppContainer,createStackNavigator } from 'react-navigation';
 import Result from '../result/Result';
+import AddProduct from '../myproduct/AddProduct'
 export default class Drawer extends Component {
     static navigationOptions = ({ navigation }) => ({
         header: null
@@ -110,6 +111,9 @@ const AppNavigator = createStackNavigator({
     },
     Result:{
         screen: Result
+    },
+    AddProduct:{
+        screen: AddProduct
     }
   },{
     contentComponent: CustomMenu,

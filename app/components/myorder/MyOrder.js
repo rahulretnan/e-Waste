@@ -17,12 +17,12 @@ export default class MyOrder extends Component {
     super(props)
     this.state = {
       deviceList: [
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
-        { name: "Readmi", price: "₹1000", short_desc: "phone" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },  
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },  
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },  
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },  
+        { name: "Readmi", price: "₹1000", short_desc: "phone", seller: "Seller Details" },  
       ]
     }
   }
@@ -58,17 +58,31 @@ export default class MyOrder extends Component {
             </View>
           </Right>
         </Header>
+       
         <ScrollView>
         {this.state.deviceList.map((single_data, key) => (
               <Container key={key} style={styles.card} >
             <Content>
               <Card>
+                <CardItem>
+                <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',alignSelf:'center'}}>
+                    <Button style={{width:'50%',alignItems:'center',justifyContent:'center',backgroundColor:'orange',height:60,borderRadius:30,marginRight:5}}>
+                        <Text style={{fontSize:18,color:'white'}}>OrderID</Text>
+                    </Button>
+                    <Button
+                    onPress={() => this.props.navigation.navigate('Payment')}
+                    style={{width:'50%',alignItems:'center',justifyContent:'center',height:60,backgroundColor:'green',borderRadius:30}}>
+                        <Text style={{fontSize:18,color:'white'}}>Track</Text>
+                    </Button>
+                </View>
+                </CardItem>
                 <CardItem cardBody >
                   <View style={{ flexDirection: 'row' }}>
                     <View style={{ flexDirection: 'column',marginLeft:20,marginTop:30 }}>
                       <Text style={{fontSize:20}}> {single_data.name}</Text>
                       <Text style={{fontSize:16,marginTop:20}} >{single_data.short_desc}</Text>
-                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >{single_data.price}</Text>
+                      <Text style={{fontSize:16,marginTop:20}} >{single_data.seller}</Text>
+                      <Text style={{fontSize:16,marginTop:20,fontWeight:'bold'}} >Price : {single_data.price}</Text>
                     </View>
                     <Right style={{ alignSelf: 'flex-end', flex: 1, flexDirection: 'column' }}>
                       <Image source={require('../../img/image.png')} style={styles.image} />
